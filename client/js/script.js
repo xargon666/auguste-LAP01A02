@@ -3,19 +3,20 @@
 const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
 const searchBar = document.querySelector('#search-bar')
+const resultsURL = "./results.html"
 let targetElement
+let newPage
 
-function openResultsWindow(){    
-    // results.html
-    window.open("result.html"); 
-    targetElement = document.querySelector('ul')
+function openResultsWindow(){
+    newPage = window.open(url, target="_self")
+    newPage.document.innerHTML.style.background = "red"
 }
 
 // important bits
 const port = 3000
 
-btn1.addEventListener('submit',btn1Fetch)
-btn2.addEventListener('submit',btn2Fetch)
+btn1.addEventListener('click',btn1Fetch)
+btn2.addEventListener('click',btn2Fetch)
 
 // Btn-1 Returns 10 results
 function btn1Fetch(e){
@@ -28,18 +29,19 @@ function btn1Fetch(e){
 
     // open new window...
     openResultsWindow()
-    
+    targetElement = newPage.document.querySelector('#results-ul')
+    console.log(targetElement)
     fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
     .then(data => {
         try {        // do something with searchBar.textContent...
         for (let i = 0;i < 10;i++){
-            let newLi = document.createElement('li')
+            let newLi = newPage.document.createElement('li')
             newLi.textContent = data[i]
             targetElement.appendChild(newLi)
         }
     } catch (err) {
-        let newLi = document.createElement('li')
+        let newLi = newPage.document.createElement('li')
         newLi.textContent = "Something when wrong!"
         targetElement.appendChild(newLi)
     }
@@ -64,12 +66,12 @@ function btn2Fetch(e){
     .then(data => {
         // do something with searchBar.textContent...
         try {
-            let newLi = document.createElement('li')
+            let newLi = newPage.document.createElement('li')
             newLi.textContent = data
             targetElement.appendChild(newLi)
         }
         catch(err) {
-            let newLi = document.createElement('li')
+            let newLi = newPage.document.createElement('li')
             newLi.textContent = "Something when wrong!"
             targetElement.appendChild(newLi)
         }
