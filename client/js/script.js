@@ -15,7 +15,8 @@ btn1.addEventListener('submit',btn1Fetch)
 btn2.addEventListener('submit',btn2Fetch)
 
 // Returns 10 results
-function btn1Fetch(){
+function btn1Fetch(e){
+    e.preventDefault()
     fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
     .then(data => {
@@ -35,7 +36,8 @@ function btn1Fetch(){
 }
 
 // Returns 1 result
-function btn2Fetch(){
+function btn2Fetch(e){
+    e.preventDefault()
     fetch(`http://localhost:${port}/${target}`)
     .then(response => response.json())
     .then(data => {
