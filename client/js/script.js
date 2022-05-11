@@ -4,13 +4,19 @@ const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
 const searchBar = document.querySelector('#search-bar')
 const resultsURL = "./results.html"
-let targetElement
+const mainSelector = document.querySelector("main")
+let targetElement = document.querySelector('#results-ul')
 let newPage
 
 function openResultsWindow(){
     newPage = window.open(url, target="_self")
     newPage.document.innerHTML.style.background = "red"
 }
+
+function hideMain(){
+    mainSelector.style.display = "none"
+}
+
 
 // important bits
 const port = 3000
@@ -28,8 +34,7 @@ function btn1Fetch(e){
     const source = "allfilms" // DATA SOURCE PAGE
 
     // open new window...
-    openResultsWindow()
-    targetElement = newPage.document.querySelector('#results-ul')
+    // openResultsWindow()
     console.log(targetElement)
     fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
@@ -66,7 +71,7 @@ function btn2Fetch(e){
     .then(data => {
         // do something with searchBar.textContent...
         try {
-            let newLi = newPage.document.createElement('li')
+            let newLi = document.createElement('li')
             newLi.textContent = data
             targetElement.appendChild(newLi)
         }
