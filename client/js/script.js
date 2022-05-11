@@ -4,6 +4,7 @@ const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
 const searchBar = document.querySelector('#search-bar')
 let targetElement
+
 function openResultsWindow(){    
     // results.html
     window.open("result.html"); 
@@ -16,13 +17,14 @@ const port = 3000
 btn1.addEventListener('submit',btn1Fetch)
 btn2.addEventListener('submit',btn2Fetch)
 
-// Returns 10 results
+// Btn-1 Returns 10 results
 function btn1Fetch(e){
+    console.log("submit button press detected - btn-1")
     // prevent submit button default behaviour
     e.preventDefault()
 
     // specify source
-    const source = "allfilms"
+    const source = "allfilms" // DATA SOURCE PAGE
 
     // open new window...
     openResultsWindow()
@@ -45,13 +47,14 @@ function btn1Fetch(e){
     });
 }
 
-// Returns 1 result
+// Btn-2 Returns 1 result
 function btn2Fetch(e){
+    console.log("submit button press detected - btn-2")
     // prevent submit button default behaviour
     e.preventDefault()
 
     // specify source
-    const source = "random"
+    const source = "random" // DATA SOURCE PAGE
 
     // open new window...
     openResultsWindow()
