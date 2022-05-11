@@ -3,20 +3,30 @@
 const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
 const searchBar = document.querySelector('#search-bar')
-
-// results.html
-const targetElement = document.querySelector('ul')
+let targetElement
+function openResultsWindow(){    
+    // results.html
+    window.open("result.html"); 
+    targetElement = document.querySelector('ul')
+}
 
 // important bits
 const port = 3000
-const source = "allfilms"
 
 btn1.addEventListener('submit',btn1Fetch)
 btn2.addEventListener('submit',btn2Fetch)
 
 // Returns 10 results
 function btn1Fetch(e){
+    // prevent submit button default behaviour
     e.preventDefault()
+
+    // specify source
+    const source = "allfilms"
+
+    // open new window...
+    openResultsWindow()
+    
     fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
     .then(data => {
@@ -37,14 +47,22 @@ function btn1Fetch(e){
 
 // Returns 1 result
 function btn2Fetch(e){
+    // prevent submit button default behaviour
     e.preventDefault()
-    fetch(`http://localhost:${port}/${target}`)
+
+    // specify source
+    const source = "random"
+
+    // open new window...
+    openResultsWindow()
+
+    fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
     .then(data => {
         // do something with searchBar.textContent...
         try {
             let newLi = document.createElement('li')
-            newLi.textContent = data[i]
+            newLi.textContent = data
             targetElement.appendChild(newLi)
         }
         catch(err) {
@@ -55,3 +73,4 @@ function btn2Fetch(e){
         console.log(data)
     });
 }
+
