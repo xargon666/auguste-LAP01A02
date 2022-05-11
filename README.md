@@ -2,8 +2,22 @@ auguste-LAP01A02-Google-Project
 ================================
 
 ## Installation & usage
-TBD
+1. Clone the repo
+2. Enter the repo folder and enter the following commands:
+    1. cd server
+    2. npm install
+    3. npm start
+3. open another terminal
+4. Enter the repo folder and enter the following commands:
+    1. cd client
+    2. python -m http.server
+5. navigate to the following url in your web browser:
+    http://localhost:8000
 
+## Technology required
+- python
+- npm
+- web browser
 ## Changelog
 TBD
 
