@@ -13,7 +13,8 @@ TBD
 ## Wins & Challenges
 ### Wins
 
-- Learned about badges
+- Learned about badges for README.md.
+- Learned how to extract favicon from sites.
 
 ### Challenges
 
