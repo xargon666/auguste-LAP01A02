@@ -20,7 +20,7 @@ app.get("/allfilms", (req, res) => res.send(data));
 // route for specific film
 app.get("/allfilms/:id", (req, res) => {
   if (req.params.id = movies.length || req.params.id < 1) {
-    res.send(
+    res.status(404).send(
       `That does not exist, please choose a number betwen 1 and ${movies.length}`
     );
   } else {
