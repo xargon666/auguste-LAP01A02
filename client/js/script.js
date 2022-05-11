@@ -1,6 +1,8 @@
 // search button script
 const btn1 = document.querySelector('#btn-1')
 const btn2 = document.querySelector('#btn-2')
+const searchBar = document.querySelector('#search-bar')
+
 const port = 3000
 const target = "movies"
 
@@ -12,6 +14,7 @@ function btn1Fetch(){
     fetch(`http://localhost:${port}/${target}`)
     .then(response => response.json())
     .then(data => {
+        // do soething with searchBar.textContent...
         console.log(data)
     });
 }
@@ -21,6 +24,7 @@ function btn2Fetch(){
     fetch(`http://localhost:${port}/${target}`)
     .then(response => response.json())
     .then(data => {
+        // do soething with searchBar.textContent...
         console.log(data)
     });
 }
