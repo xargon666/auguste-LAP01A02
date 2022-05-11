@@ -28,12 +28,13 @@ app.get("/allfilms/:id", (req, res) => {
   }
 });
 
+// route for random movie
 app.get("/random",(req,res)=>{
-  res.send(movies[randomNumber])
+  res.send(getRandomMovie())
 })
 
 function getRandomMovie() {
   const randomNumber = Math.floor(Math.random() * movies.length);
   console.log("randomNumber", randomNumber);
-  return formatQuote(movies[randomNumber]);
+  return movies[randomNumber];
 }
