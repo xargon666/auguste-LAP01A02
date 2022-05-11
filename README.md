@@ -14,6 +14,8 @@ auguste-LAP01A02-Google-Project
 5. navigate to the following url in your web browser:
     http://localhost:8000
 
+*Note: Server Port is 3000*
+
 ## Technology required
 - python
 - npm
