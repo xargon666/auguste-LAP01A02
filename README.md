@@ -18,6 +18,7 @@ auguste-LAP01A02-Google-Project
 - python
 - npm
 - web browser
+
 ## Changelog
 TBD
 
@@ -29,9 +30,11 @@ TBD
 
 - Learned about badges for README.md.
 - Learned how to extract favicon from sites.
+- Learned about vim
 
 ### Challenges
 
+- Selecting elements on in a new window (never resolved)
 
 ## Technology Used
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
