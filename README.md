@@ -1,7 +1,7 @@
 auguste-LAP01A02-Google-Project
 ================================
 
-## Installation & usage
+## Installation & Usage
 1. Clone the repo
 2. Enter the repo folder and enter the following commands:
     1. cd server
