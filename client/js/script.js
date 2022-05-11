@@ -29,7 +29,7 @@ function btn1Fetch(e){
     console.log("submit button press detected - btn-1")
     // prevent submit button default behaviour
     e.preventDefault()
-
+    hideMain()
     // specify source
     const source = "allfilms" // DATA SOURCE PAGE
 
@@ -41,12 +41,16 @@ function btn1Fetch(e){
     .then(data => {
         try {        // do something with searchBar.textContent...
         for (let i = 0;i < 10;i++){
-            let newLi = newPage.document.createElement('li')
-            newLi.textContent = data[i]
+            let newLi = document.createElement('li')
+            let output = `
+            Title: ${data[i].title}
+            Director: ${data[i].director}
+            Release Date: ${data[i].release_date}`
+            newLi.textContent = output
             targetElement.appendChild(newLi)
         }
     } catch (err) {
-        let newLi = newPage.document.createElement('li')
+        let newLi = document.createElement('li')
         newLi.textContent = "Something when wrong!"
         targetElement.appendChild(newLi)
     }
@@ -59,12 +63,12 @@ function btn2Fetch(e){
     console.log("submit button press detected - btn-2")
     // prevent submit button default behaviour
     e.preventDefault()
-
+    hideMain()
     // specify source
     const source = "random" // DATA SOURCE PAGE
 
     // open new window...
-    openResultsWindow()
+    // openResultsWindow()
 
     fetch(`http://localhost:${port}/${source}`)
     .then(response => response.json())
@@ -72,11 +76,15 @@ function btn2Fetch(e){
         // do something with searchBar.textContent...
         try {
             let newLi = document.createElement('li')
-            newLi.textContent = data
+            let output = `
+            Title: ${data.title}
+            Director: ${data.director}
+            Release Date: ${data.release_date}`
+            newLi.textContent = output
             targetElement.appendChild(newLi)
         }
         catch(err) {
-            let newLi = newPage.document.createElement('li')
+            let newLi = document.createElement('li')
             newLi.textContent = "Something when wrong!"
             targetElement.appendChild(newLi)
         }
