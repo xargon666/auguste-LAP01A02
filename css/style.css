@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
+  color: #202124;
+  background-color: white;
+  font-size: 14px;
+}
+
+:root {
+  --theme-dark: #202124;
+  --theme-mid: rgb(62, 71, 80);
+  --theme-light: #70757a;
+  --off-white: rgb(248, 249, 250);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button:hover {
+  border: black solid 1px;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  width: 100vw;
+  height: 5vh;
+  text-align: left;
+}
+
+header a:first-of-type {
+  margin-left: 15px;
+}
+
+header a {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px;
+}
+
+header .long {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+header .long .long-2 {
+display:flex;
+justify-content: flex-end;
+flex-direction: row;
+  min-width: auto;
+  float:right;
+  padding-left:32px;
+  height:48px;
+  line-height: normal;
+  align-items: center;
+}
+
+/* header .long .long-2 .link-box {
+  float: right;
+} */
+
+header .long .long-2 .link-box .link-con{
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+    line-height: normal;
+  }
+
+  header .long .long-2 .link-box .link-con a {
+  display: inline-block;
+  line-height: 24px;
+  vertical-align: middle;
+}
+
+header .acc-con {
+    float:right;
+    position:relative;
+    white-space: nowrap;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+header .dots-outer {
+position:relative;
+line-height: normal;
+white-space: nowrap;
+}
+header .dots-inner {
+position:relative;
+line-height: normal;
+white-space: nowrap;
+}
+
+header .dots-svg{
+    height:40px;
+    width:40px;
+}
+
+header .account-icon-con{
+    height:40px;
+    width:40px;
+}
+
+header .round-icon{
+    display: inline-block;
+    transform: scale(.5);
+    transform-origin: left 0;
+    /* background-size:32px;
+    height:32px;
+    width:32px; */
+    border-radius:50%
+  }
+
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+main #section-1 {
+  height: 30vh;
+}
+main #section-2 {
+  height: 20vh;
+}
+main #section-3 {
+  height: 35vh;
+}
+
+main #location {
+  height: 5vh;
+}
+
+footer {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100vw;
+  height: 5vh;
+}
