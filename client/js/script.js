@@ -92,3 +92,39 @@ function btn2Fetch(e){
     });
 }
 
+class Anchor {
+    constructor(id,href,hrefTarget){
+        this.id = id,
+        this.href = href,
+        this.hrefTarget = hrefTarget,
+        this.hrefExpected = true,
+        this.hrefTargetExpected = true
+    }
+}
+
+function allAnchors(){
+    let nodeList = document.querySelectorAll('a')
+    let objectArray = []
+    i = 0
+    nodeList.forEach(function(node) {
+        objectArray.push(new Anchor(i,node.hasAttribute("href"),node.href))
+        i++
+    })
+    return objectArray
+}
+
+console.log(allAnchors())
+
+// class myObject {
+//     constructor(id){
+//         this.id = id
+//     }
+// }
+
+// function makeMyObject(){
+//     for (let i = 0;i<10;i++){
+//     let output = new myObject(i)
+//     console.log(output)
+//     }   
+// }
+// makeMyObject();
