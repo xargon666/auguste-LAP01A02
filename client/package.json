@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "coverage":""
+    "coverage": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browsify": "^0.0.4",
     "concurrently": "^7.1.0",
     "coverage": "^0.4.1",
     "jest": "^28.1.0",
