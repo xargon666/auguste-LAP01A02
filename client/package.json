@@ -1,7 +1,6 @@
 {
   "name": "client",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
@@ -16,5 +15,9 @@
     "coverage": "^0.4.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": ""
 }
